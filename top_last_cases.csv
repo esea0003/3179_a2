@@ -1,5 +1,5 @@
 ﻿Country,Year,Status,Life_expectancy_,Adult_Mortality,infant_deaths,Alcohol,percentage_expenditure,Hepatitis_B,Measles_,_BMI_,under-five_deaths_,Polio,Total_expenditure,Diphtheria_,_HIV/AIDS,GDP,Population,_thinness__1-19_years,_thinness_5-9_years,Income_composition_of_resources,Schooling
-Cyprus,2015,Developed,85,52,0,,0,97,0,6.3,0,97,,97,0.1,2375.1127,116985,1,1,0.854,14.3
+Cyprus,2015,Developed,85,52,0,,0,97,0,63,0,97,,97,0.1,2375.1127,116985,1,1,0.854,14.3
 Switzerland,2015,Developed,83.4,49,0,,0,,35,57.4,0,97,,97,0.1,8989.8424,8282396,0.4,0.3,0.938,16
 Iceland,2015,Developed,82.7,49,0,,0,,0,61,0,92,,92,0.1,5734.4436,33815,1,0.9,0.919,19
 Slovakia,2015,Developed,76.7,19,0,,0,96,1,59.1,0,96,,96,0.1,,,1.2,1.2,0.842,15
