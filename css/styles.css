@@ -1,0 +1,74 @@
+*{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+
+hr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  fill:#f7e7ce;
+  background-color: #888888;
+}
+
+.page{
+  background-color: #F5F5F5;
+  margin: 0 auto;
+}
+
+#title {
+  font-size: 50px;
+  font-weight: bold;  
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center; 
+}
+
+.vis-container{
+  width: 100%;
+  margin: 0 auto; 
+  background-color: red;
+  display: inline-block;
+  align-items: center;
+}
+
+.l-box {
+  padding: 2em;
+}
+#map{
+  width: 75%;
+  margin: 0 auto;
+}
+
+.box h2, h1{
+  margin-top:0px;
+}
+
+.box{
+  padding-left: 0em;
+  padding-right:0em;
+  padding-top: 0.5em;
+  padding-bottom: 1.5em;
+  border-radius: 15px;
+  box-shadow: 5px 10px 8px #888888;
+  width: 100%;
+}
+
+.inner {
+  background-color: #f7e7ce; padding-left: 4em;padding-right:4em;padding-top: 0em;padding-bottom: 0em;margin-bottom: 0em;
+}
+
+.innerbox {
+  background-color: #f7e7ce; padding-left: 4em;padding-right:4em;padding-top: 0.5em;padding-bottom: 0em;margin-bottom: 0em;border-radius: 15px;
+}
+
+#icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
