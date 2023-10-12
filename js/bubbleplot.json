@@ -1,0 +1,136 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap for Polio Vaccinations",
+    "title": {
+        "text": "Correlation of Life Expectancy and Schooling Rates (2015)",
+        "fontSize": 16
+    },
+    "width": 600,
+    "height": 350,
+    "data": {
+      "url": "https://raw.githubusercontent.com/esea0003/3179_a2/main/data/life_expectancy.csv"
+    },
+    "params": [
+      {
+        "name": "Population_Above",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 50000000,
+          "step": 1000,
+          "name": "Minimum Population: "
+        }
+      },
+      {
+        "name": "Status_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Developed",
+            "Developing"
+
+          ],
+          "labels": [
+            "Show All",
+            "Developed",
+            "Developing"
+          ],
+          "name": "Status Selection: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.Year== 2015"},
+      {"filter": "datum.Schooling > 0"},
+      {"filter": "datum.Life_expectancy_ > 0"},
+      {"filter": "datum.Population > Population_Above"},
+      {"filter": "Status_selection == null || datum.Status == Status_selection"}
+    ],
+    "encoding": {
+      "x": {
+        "field": "Schooling",
+        "type": "quantitative",
+        "title": "Schooling Score",
+        "axis": {"tickCount": 10},
+        "scale": {"domain": [0, 22]}
+      },
+      "y": {
+        "field": "Life_expectancy_",
+        "type": "quantitative",
+        "axis": {"tickCount": 7},
+        "scale": {"domain": [40, 100]},
+        "title": "Life Expectancy"
+      }
+    },
+    "layer": [
+      {
+        "selection": {
+          "Status_highlight": {
+            "type": "multi",
+            "fields": ["Status"],
+            "bind": "legend"
+          }
+        },
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "Population",
+            "type": "quantitative",
+            "scale": {"type": "threshold", "domain": [50000,500000, 5000000 ,50000000]}
+          },
+          "color": {
+            "field": "Status",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Developed",
+                "Developing"
+              ],
+              "range": [ 
+                "#C73866",
+                "#FD8F52"
+              ]
+            }
+          },
+          "opacity": {
+            "value": 0.6
+          },
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {
+              "field": "Schooling",
+              "title": "Number of Years at School",
+              "type": "quantitative",
+              "format": ","
+            },
+            {"field": "Life_expectancy_", "type": "quantitative", "title": "Average Life Expectancy"},
+            {"field": "Population", "type": "quantitative", "format": ","}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Country", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['Country'] == 'South Sudan' || datum['Country'] == 'Sierra Leone'|| datum['Country'] == 'Slovenia'|| datum['Country'] == 'Australia'",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      }
+    ]
+  }
+  

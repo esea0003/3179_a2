@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap for Diphtheria Vaccinations",
+    "title": {
+        "text": "Diphtheria Vaccine Immunisation Heatmap",
+        "fontSize": 16
+    },
+    "data": {"url": "https://raw.githubusercontent.com/esea0003/3179_a2/main/data/top_last_cases.csv"},
+    "transform": [{"filter": "datum.Year >= 2005"}],
+    "width": 200,
+    "height": 200,
+    "encoding": {
+      "y": {"field": "Country", "type": "nominal", "sort": {"field": "Status", "order": "descending"}},
+      "x": {"field": "Year", "type": "ordinal"},
+      "color": {"field": "Diphtheria_"}
+      
+    },
+    "layer": [{
+        "mark": "rect",
+        "encoding": {
+            "color": {
+                "field": "Diphtheria_",
+                "title": "Immunisation Rate",
+                "type": "quantitative",
+                "legend": {"direction": "vertical", "gradientLength": 120},
+                "scale": {"range": ["#C73866","#F3676E" , "#FD8F52", "#FFBD71", "#FFDCA2"]}
+            }
+        }
+    },
+    
+    {
+        "mark": "text",
+        "encoding": {
+          "text": {"field": "Diphtheria_", "type": "quantitative"},
+          "color": {
+            "value": "black"
+          }
+          
+        }
+      }],
+    
+    "config": {"axis": {"grid": true, "gridColor": "grey","tickBand": "extent", "labelFontSize": 10,"titleFontSize": 14}}
+  }

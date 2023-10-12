@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+</head>
+<body>
+  <div class="page">
+
+    <div class="pure-g" style="position: relative; width:100%;">
+      <div class="pure-u-1-1">
+        <div class="l-box">
+          <h1>
+            <span id="title", style="color: #F3676E;">Life Expectancy Around the World</span>
+          </h1>
+          <p style="font-weight: lighter; color: #C73866">A visualisation by Edelyn Seah </p>
+            <p style="padding-left: 6em; padding-right: 6em; text-align: justify;">
+              This study endeavors to bridge existing research gaps by utilizing a mixed-effects regression model, drawing upon data spanning from 2000 to 2015. It incorporates essential immunization metrics, including Hepatitis B, Polio, and Diphtheria, and systematically examines a range of variables, such as mortality rates, economic factors, sociocultural influences, and healthcare indicators. By conducting a cross-country analysis, our research aims to pinpoint the precise determinants contributing to decreased life expectancy. This analysis can serve as a valuable resource for nations seeking to refine their public health strategies and prioritize areas of intervention to enhance the well-being of their populations.</p>
+        </div>
+    </div>
+
+    <div class="pure-g" style="position: relative; width:100%; margin-top: 3em;">
+      <div class="pure-u-1-1" style="background-color: #F5F5F5;">
+        <div style="display: table; margin: 0 auto;">
+          <div class="box" style="background-color: #f7e7ce; width: 80%  ;margin: auto;">
+
+            <div class="innerbox">
+              <h1 style="color: #C73866; font-size: 28px;">Infant Deaths Across all Countries in 2015</h1>
+              <p style=" text-align: justify;">
+                High infant mortality rates are a key contributor to lower overall life expectancy. The following graphs will highlight the role of immunization, specifically against diseases like Hepatitis B, Polio, and Diphtheria, in reducing infant deaths. Immunization helps protect infants from life-threatening diseases, which, in turn, can significantly boost life expectancy by reducing the burden of infant mortality.
+              </p>
+              <hr>
+            </div>
+            <div class="chartbox" style="display: table; margin: 0 auto;padding-left:2.5em;" >
+              <div id="chloropleth"></div>
+            </div>
+            <div class="innerbox">
+              <p style=" text-align: justify;">
+                This shows the infant mortality rates across all countries. We see that <span style="font-weight: bold;"> India </span>
+                has the <span style="font-weight: bold;">highest 
+                number mortality rates</span> of <span style="font-weight: bold; color: #E75480">1800</span> deaths in 2015.
+                India may experience high infant mortality rates due to factors such as inadequate access to healthcare, limited prenatal care, and a higher prevalence of poverty, malnutrition, and preventable diseases.
+
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-g" style="position: relative; width:100%; margin-top: 3em;">
+      <div class="pure-u-1-1" style="background-color: #F5F5F5;">
+        <div style="display: table; margin: 0 auto;">
+          <div class="box" style="background-color: #f7e7ce; width: 80%  ;margin: auto;">
+
+            <div class="innerbox">
+              <h1 style="color: #C73866; font-size: 28px;">Who is Immigrating? &#128104&#128105</h1>
+              <p style=" text-align: justify;">We can observe the <span style="font-weight: bold; color: #C73866">proportion of each gender</span> overall in the donut chart (right), or based on each age group in the population pyramid 
+                (left). Toggle the continent selection drop down to analyse the proportion for specific continents!
+                <br> From the charts, the main observation is that most migrants <span style="font-weight: bold; color: #C73866">fall in the age group of 30-49 years old</span>. This can be explained by the fact that adults in this age range
+                are more financially able to migrate to another country to seek a new life.
+              </p>
+              <hr>
+            </div>
+            <div class="chartbox" style="display: table; margin: 0 auto;padding-left:2.5em;" >
+              <div id="bump"></div>
+            </div>
+            <div class="innerbox">
+              <p style=" text-align: justify;">
+                This shows the ranking of countries by the number of migrants in each 5-year period. We see that
+                <span style="font-weight: bold; color: #E75480">United States of America (USA)</span> has the <span style="font-weight: bold;">highest 
+                number of migrants</span> across all periods. 
+
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-g" style="position: relative; width:100%; margin-top: 3em;">
+      <div class="pure-u-1-1" style="background-color: #F5F5F5;">
+        <div style="display: table; margin: 0 auto;">
+          <div class="box" style="background-color: #f7e7ce; width: 80%  ;margin: auto;">
+
+            <div class="innerbox">
+              <h1 style="color: #C73866; font-size: 28px;">Who is Immigrating? &#128104&#128105</h1>
+              <p style=" text-align: justify;">We can observe the <span style="font-weight: bold; color: #C73866">proportion of each gender</span> overall in the donut chart (right), or based on each age group in the population pyramid 
+                (left). Toggle the continent selection drop down to analyse the proportion for specific continents!
+                <br> From the charts, the main observation is that most migrants <span style="font-weight: bold; color: #C73866">fall in the age group of 30-49 years old</span>. This can be explained by the fact that adults in this age range
+                are more financially able to migrate to another country to seek a new life.
+              </p>
+              <hr>
+            </div>
+            <div class="chartbox" style="display: table; margin: 0 auto;padding-left:2.5em;" >
+              <div id="dotplot"></div>
+            </div>
+            <div class="innerbox">
+              <p style=" text-align: justify;">
+                This shows the ranking of countries by the number of migrants in each 5-year period. We see that
+                <span style="font-weight: bold; color: #E75480">United States of America (USA)</span> has the <span style="font-weight: bold;">highest 
+                number of migrants</span> across all periods. 
+
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pure-g" style="position: relative; width:100%; margin-top: 3em;">
+      <div class="pure-u-1-1" style="background-color: #F5F5F5;">
+        <div style="display: table; margin: 0 auto;">
+          <div class="box" style="background-color: #f7e7ce; width: 80%  ;margin: auto;">
+
+            <div class="innerbox">
+              <h1 style="color: #C73866; font-size: 28px;">Migration and GDP &#127974</h1>
+              <p style=" text-align: justify;">From the chart, there is a clear <span style="font-weight: bold; color: #C73866">positive correlation</span> 
+                between a country's GDP and the number of migrants.
+                This could be because a higher GDP would mean that the country is growing - which is an important factor when choosing where to migrate to.
+                Clear examples of this are USA and China, as they have a high GDP and high number of immigrants (in 2020).
+              </p>
+              <hr>
+            </div>
+            <div class="chartbox" style="display: table; margin: 0 auto;padding-left:2.5em;" >
+              <div id="heatmap_Diphtheria"></div><div id="heatmap_Polio"></div>
+              <div class="innerbox">
+                <p style=" text-align: justify;">
+                  This shows the ranking of countries by the number of migrants in each 5-year period. We see that
+                  <span style="font-weight: bold; color: #E75480">United States of America (USA)</span> has the <span style="font-weight: bold;">highest 
+                  number of migrants</span> across all periods. 
+  
+                </p>
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-g" style="position: relative; width:100%; margin-top: 3em;">
+      <div class="pure-u-1-1" style="background-color: #F5F5F5;">
+        <div style="display: table; margin: 0 auto;">
+          <div class="box" style="background-color: #f7e7ce; width: 80%  ;margin: auto;">
+
+            <div class="innerbox">
+              <h1 style="color: #C73866; font-size: 28px;">Flow of Migration &#127754</h1>
+              <p style=" text-align: justify;">The <span style="font-weight: bold; color:#C73866">flow of migration</span> 
+                highlights which continents migrants from one continent are migrating to.
+                In this chart, we can analyse the flow of migration overall from each <span style="font-weight: bold; color:#C73866">origin continent</span> (left) to the 
+                <span style="font-weight: bold; color:#C73866">destination continent</span> (right).
+                <br>
+                One clear example from the chart is that the majority of migrants are from <span style="font-weight: bold; color:#356594">Africa</span>, and a majority of these Africans
+                are migrating to countries in <span style="font-weight: bold; color:rgb(62, 161, 85)">Oceania</span>.
+                <br>
+                We can also drill down on this chart by selecting on a continent's section of the bar on either side ("Origin" or "Destination")
+                to see the proportions for only a specific continent to/from other continents.
+              </p>
+              <hr>
+            </div>
+            <div class="chartbox" style="display: table; margin: 0 auto;padding-left:2.5em;" >
+              <div id="bubbleplot"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pure-g" style="position: relative; width:100%;">
+      <div class="pure-u-1-1">
+        <div class="l-box">
+          <h1>
+            <span style="font-size: 1.2em; color:#F3676E; text-align: left;">Conclusion</span>
+          </h1>
+            <p style="padding-left: 6em; padding-right: 6em; text-align: justify;">
+              Today, we can see that more people than ever live and become citizens in countries other than the one in which they were born in.
+              Many individuals migrate either out of choice, or out of necessity. Therefore, from this visualisation we are able to
+              <span style="font-weight: bold; color:#C73866;">inspect which countries and continents these immigrants are migrating to</span>, as well as
+              <span style="font-weight: bold; color:#C73866;">analyse the flow of migration trends.</span>
+              We have observed that there are many migrations that happen on a yearly basis, and therefore with so many migrations there is definitely a need to promote international cooperation 
+              on migration issues (complications, migrant deaths, displaced migrants).
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  var spec1 = "js/chloropleth.vg.json";
+  vegaEmbed('#chloropleth', spec1).then(function(result) {
+  }).catch(console.error);
+
+  var spec2 = "js/bumpchart.vg.json";
+  vegaEmbed('#bump', spec2).then(function(result) {
+  }).catch(console.error);
+
+  var spec3 = "js/heatmap_Diphtheria.json";
+  vegaEmbed('#heatmap_Diphtheria', spec3).then(function(result) {
+  }).catch(console.error);
+
+  var spec4 = "js/heatmap_Polio.json";
+  vegaEmbed('#heatmap_Polio', spec4).then(function(result) {
+  }).catch(console.error);
+
+  var spec5 = "js/dotplot.json";
+  vegaEmbed('#dotplot', spec5).then(function(result) {
+  }).catch(console.error);
+
+  var spec6 = "js/bubbleplot.json";
+  vegaEmbed('#bubbleplot', spec6).then(function(result) {
+  }).catch(console.error);
+</script>
+
+</body>
+</html>
