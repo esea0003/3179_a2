@@ -60,7 +60,7 @@
             "range": ["#FFBD71", "#FD8F52", "#F3676E", "#C73866"]
           },
           "legend": {
-            "title": "infant_deaths",
+            "title": "Infant deaths",
             "titleFontSize": 11,
             "direction": "horizontal",
             "orient": "bottom-left",

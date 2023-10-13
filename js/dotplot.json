@@ -5,7 +5,7 @@
         "text": "Life Expectancy Rates in 2005 vs 2015",
         "fontSize": 16
     },
-    "width": 400,
+    "width": 600,
     "height": 200,
     "data": {"url": "https://raw.githubusercontent.com/esea0003/3179_a2/main/data/top_last_cases.csv"},
     "transform": [
@@ -44,6 +44,7 @@
       "tooltip": [
         { "field": "Year", "type": "ordinal", "title": "Year"},
         {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Status", "type": "nominal", "title": "Status"},
         {"field": "Life_expectancy_", "type": "quantitative","title": "Life Expectancy"}
     ],
       "y": {
@@ -76,7 +77,7 @@
       },
       {
         "mark": {
-          "type": "point",
+          "type": "circle",
           "filled": true
         },
         "encoding": {
@@ -85,13 +86,33 @@
             "type": "ordinal",
             "scale": {
               "domain": ["Developed", "Developing"],
-              "range": ["#e6959c", "#911a24"]
+              "range": [
+                "#C73866",
+                "#FD8F52"
+              ]
             },
-            "title": "Status"
+            
+            "title": "Year"
           },
-
-          "size": {"value": 200},
-          "opacity": {"value": 1}
+          "size": {"value":450},
+          "opacity": {
+            "condition": {
+              "test": "datum['Year'] == '2015'",
+              "value": 1
+            },
+            "value": 0.7
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontSize": 8,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Life_expectancy_", "type": "nominal"},
+          "color": {"value": "white"}
         }
       }
     ]

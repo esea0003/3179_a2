@@ -20,10 +20,10 @@
         "encoding": {
             "color": {
                 "field": "Diphtheria_",
-                "title": "Immunisation Rate",
+                "title": "Immunisation Rate (%)",
                 "type": "quantitative",
                 "legend": {"direction": "vertical", "gradientLength": 120},
-                "scale": {"range": ["#C73866","#F3676E" , "#FD8F52", "#FFBD71", "#FFDCA2"]}
+                "scale": {"range": ["#C73866","#F3676E" , "#FD8F52", "#FFDCA2"]}
             }
         }
     },
