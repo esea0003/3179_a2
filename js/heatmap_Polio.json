@@ -23,7 +23,12 @@
                 "type": "quantitative",
                 "legend": {"direction": "vertical", "gradientLength": 120},
                 "scale": {"range": ["#C73866","#F3676E" , "#FD8F52", "#FFDCA2"]}
-            }
+            },
+            "tooltip": [
+              {"field": "Country"},
+              { "field": "Year"},
+              {"field": "Polio", "title": "Polio Immunisation Rate (%)"}
+            ]
         }
     },
     
