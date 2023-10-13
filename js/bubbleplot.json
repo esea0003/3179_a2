@@ -53,15 +53,16 @@
         "field": "Schooling",
         "type": "quantitative",
         "title": "Schooling Score",
-        "axis": {"tickCount": 10},
+        "axis": {"tickCount": 10,"labelFontSize": 14,"titleFontSize": 14},
         "scale": {"domain": [0, 22]}
       },
       "y": {
         "field": "Life_expectancy_",
         "type": "quantitative",
-        "axis": {"tickCount": 7},
+        "axis": {"tickCount": 7,"labelFontSize": 14, "titleFontSize": 14},
         "scale": {"domain": [40, 100]},
         "title": "Life Expectancy"
+
       }
     },
     "layer": [
