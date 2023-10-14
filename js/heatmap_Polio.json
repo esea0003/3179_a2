@@ -3,11 +3,11 @@
     "description": "Heatmap for Polio Vaccinations",
     "title": {
         "text": "Polio Vaccine Immunisation Heatmap",
-        "fontSize": 16
+        "fontSize": 14
     },
     "data": {"url": "https://raw.githubusercontent.com/esea0003/3179_a2/main/data/top_last_cases.csv"},
-    "transform": [{"filter": "datum.Year >= 2005"}],
-    "width": 200,
+    "transform": [{"filter": "datum.Year >= 2010"}],
+    "width": 140,
     "height": 200,
     "encoding": {
       "y": {"field": "Country", "type": "nominal", "sort": {"field": "Status", "order": "descending"}},
@@ -19,10 +19,10 @@
         "encoding": {
             "color": {
                 "field": "Polio",
-                "title": "Immunisation Rate (%)",
+                "title": "Immunisation (%)",
                 "type": "quantitative",
                 "legend": {"direction": "vertical", "gradientLength": 120},
-                "scale": {"range": ["#C73866","#F3676E" , "#FD8F52", "#FFDCA2"]}
+                "scale": {"range": ["#FFDCA2","#C73866" ]}
             },
             "tooltip": [
               {"field": "Country"},
@@ -33,14 +33,16 @@
     },
     
     {
-        "mark": "text",
-        "encoding": {
-          "text": {"field": "Polio", "type": "quantitative"},
-          "color": {
-            "value": "black"
-          }
+      "mark": "text",
+      "encoding": {
+        "text": {"field": "Polio", "type": "quantitative"},
+        "color": {
+          "condition": {"test": "datum['Polio'] < 90", "value": "black"},
+          "value": "white"
         }
-      }],
+        
+      }
+    }],
     
-    "config": {"axis": {"grid": true, "gridColor": "grey","tickBand": "extent", "labelFontSize": 10,"titleFontSize": 14}}
+    "config": {"axis": {"grid": true, "gridColor": "grey","tickBand": "extent", "labelFontSize": 9,"titleFontSize": 14}}
   }
